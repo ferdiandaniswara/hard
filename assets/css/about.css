@@ -1,0 +1,284 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --main-radius: 3px;
+  --main-padding: 3px;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: auto ;
+  grid-template-areas:
+    "nav nav nav"
+    "main main sidebar"
+    "main main sidebar"
+    "footer footer footer";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+nav {
+  background: white;
+  grid-area: nav;
+  height: 50px;
+  border-radius: var(--main-radius);
+
+  
+}
+
+.navbar{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0 7px 8px rgba(146,161,176,.15);
+  justify-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  color: black;
+  font-size: xx-large;
+}
+
+.navigation-menu{
+  float: right;
+  display: flex;
+  align-content: center;
+  min-height: 90px;
+ 
+}
+
+.navigation-menu a{
+  margin-left: 10px;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  transition: .3s linear;
+
+}
+
+.navigation-menu a:hover{
+  background: #fff;
+  color: #2f3640;
+  transform: scale(1.1);
+}
+
+.navigation-menu i{
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.menu-toggle-btn{
+  float: right;
+  height: 90px;
+  line-height: 90px !important;
+  color: #fff;
+  font-size: 26px;
+  display: none !important;
+  cursor: pointer;
+
+}
+.fa-bars:before {
+  content: "\f0c9";
+  color: black;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+}
+
+
+main {
+  background: white;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+.post{
+  width: 800px;
+  height: auto;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.post:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.post p{
+  margin-right: 100px ;
+}
+.post h1{
+  margin-right: 100px ;
+}
+
+section{
+  background: white;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin-right: 40px;
+  
+}
+
+.aside{
+  background: #E0E7EA;
+  border: 1px solid #E0E7EA ;
+  border-radius: 15px
+
+}
+
+
+footer {
+  background: black;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.big{
+  font-size: 800%;
+  color: blue;
+}
+
+.ch{
+  color: grey;
+}
+
+.text{
+  font-size: 500%;
+  color: black;
+}
+
+.poster img{
+  float: left;
+  height: 250px;
+  margin-top: 70px;
+  border-radius: 50px;
+  
+  
+}
+.Experience{
+  background-color: white;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.Experience p{
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: large;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "footer";
+  }
+  .menu-toggle-btn{
+    display: block !important;
+    color: grey;
+  }
+
+  .navigation-menu{
+    position: fixed;
+    width: 100%;
+    max-width: 400px;
+    background: grey;
+    top: 90px;
+    right: 0;
+    display: none;
+    padding: 18px 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  .navigation-menu::before{
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #172b4d;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+
+  .navigation-menu a{
+    display: block;
+    margin: 10px 0;
+  }
+  .fa-bars:before {
+    content: "\f0c9";
+    color: black;
+    padding-right: 10px;
+}
+
+  .navigation-menu.active{
+    display: block;
+  }
+  section{
+    margin-top: 80px;
+  }
+
+  .Experience{
+    background-color: white;
+    height: auto;
+    width: auto;
+    margin:0;
+  }
+
+  .poster img{
+    height: auto;
+    max-width: 200px;
+    margin-left: 30px;
+  }
+  .menu-toggle-btn{
+    margin-right: 15px;
+    margin-bottom: 10px;
+  
+  }
+  .Experience h1{
+    margin-top: 30px;
+  }
+  .Experience p{
+    margin:5;
+  }
+  
+
+}
+
+
+
+
